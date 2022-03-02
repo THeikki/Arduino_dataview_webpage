@@ -36,7 +36,13 @@
     transform: rotate(360deg);
   }
 }
-h1 {
+h1, p {
+  text-align: center;
+}
+
+.emptyBox {
+  margin-left: 10%;
+  width: 700px;
   text-align: center;
 }
 
@@ -54,5 +60,5 @@ th,td {
 .temperatureBox {
   margin-left: 10%;
   width: 700px;
-
+  border: 1px solid black;
 }

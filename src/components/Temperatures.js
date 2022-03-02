@@ -35,9 +35,10 @@ const Temperatures = () => {
     
     if(temperatures.length === 0) {
         return (
-            <div>
+            <>
+                <h1>Arduino lämpötilat</h1>
                 <p> Ei mitattuja lämpötila-arvoja! </p>
-            </div>
+            </>
         )
     }
 
