@@ -36,6 +36,9 @@
     transform: rotate(360deg);
   }
 }
+h1 {
+  text-align: center;
+}
 
 table {
   margin: auto;
@@ -46,4 +49,10 @@ th,td {
   border: 1px solid black;
   background-color: lightblue;
   padding: 10px;
+}
+
+.temperatureBox {
+  margin-left: 10%;
+  width: 700px;
+
 }
