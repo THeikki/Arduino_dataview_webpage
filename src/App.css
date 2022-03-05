@@ -42,14 +42,14 @@ h1, p {
 
 .emptyBox {
   margin-left: 10%;
-  width: 700px;
+  width: 500px;
   text-align: center;
 }
 
 table {
   margin: auto;
   border-collapse: collapse;
-  width: 50%;
+  width: 80%;
 }
 th,td {
   border: 1px solid black;
@@ -59,6 +59,6 @@ th,td {
 
 .temperatureBox {
   margin-left: 10%;
-  width: 700px;
+  width: 500px;
   border: 1px solid black;
 }
