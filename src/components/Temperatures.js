@@ -45,11 +45,21 @@ const Temperatures = () => {
     return (
         <div>
             <h1>Arduino lämpötilat</h1>
-            {
-                temperatures.map(temperature =>
-                    <Temperature key={temperature._id} temperature={temperature} handleClick={deleteTemperature}/>
-                )
-            }
+            <table>
+                <thead>
+                    <tr>
+                    <th>Aika</th>
+                    <th>Lämpötila</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        temperatures.map(temperature =>
+                            <Temperature key={temperature._id} temperature={temperature} handleClick={deleteTemperature}/>
+                        )
+                    }
+                </tbody>
+            </table>
         </div>
     )
 
