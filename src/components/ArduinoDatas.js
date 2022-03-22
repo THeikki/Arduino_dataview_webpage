@@ -37,7 +37,7 @@ const Arduino = () => {
         return (
             <>
                 <h1>Arduino mittausdata</h1>
-                <p> Ei mitattua data-arvoja! </p>
+                <p> Ei mitattuja data-arvoja! </p>
             </>
         )
     }
