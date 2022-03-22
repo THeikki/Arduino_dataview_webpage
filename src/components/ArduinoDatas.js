@@ -1,20 +1,20 @@
-import Temperature from "./Temperature"
+import ArduinoData from "./ArduinoData"
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const Temperatures = () => {
+const Arduino = () => {
 
-    const [temperatures, setTemperature] = useState([])
+    const [values, setValues] = useState([])
 
     useEffect(() => {
-        getTemperatures()
+        getArduinoValues()
     },)
 
-    const getTemperatures = () => {
+    const getArduinoValues = () => {
         axios
-        .get("http://localhost:5000/api/arduinoData/temperatures")
+        .get("http://localhost:5000/api/arduinoData/data")
         .then(res => {
-            setTemperature(res.data)
+            setValues(res.data)
         })
         .catch(error => {
             console.log(error)
@@ -22,9 +22,9 @@ const Temperatures = () => {
 
     }
     
-    const deleteTemperature = (id) => {
+    const deleteValue = (id) => {
         
-        axios.delete("http://localhost:5000/api/arduinoData/temperatures/" + id)
+        axios.delete("http://localhost:5000/api/arduinoData/data/" + id)
         .then(res => {
             console.log(res.data)
         })
@@ -33,29 +33,30 @@ const Temperatures = () => {
         })
     }
     
-    if(temperatures.length === 0) {
+    if(values.length === 0) {
         return (
             <>
-                <h1>Arduino lämpötilat</h1>
-                <p> Ei mitattuja lämpötila-arvoja! </p>
+                <h1>Arduino mittausdata</h1>
+                <p> Ei mitattua data-arvoja! </p>
             </>
         )
     }
 
     return (
         <div>
-            <h1>Arduino lämpötilat</h1>
+            <h1>Arduino mittausdata</h1>
             <table>
                 <thead>
                     <tr>
                     <th>Aika</th>
                     <th>Lämpötila</th>
+                    <th>Kaasuarvo</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        temperatures.map(temperature =>
-                            <Temperature key={temperature._id} temperature={temperature} handleClick={deleteTemperature}/>
+                        values.map(data =>
+                            <ArduinoData key={data._id} data={data} handleClick={deleteValue}/>
                         )
                     }
                 </tbody>
@@ -66,4 +67,4 @@ const Temperatures = () => {
 
 }
 
-export default Temperatures
+export default Arduino

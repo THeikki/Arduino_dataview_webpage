@@ -1,12 +1,12 @@
 import './App.css';
-import Temperatures from './components/Temperatures';
+import ArduinoDatas from './components/ArduinoDatas';
 
 function App() {
  
   return (
     <div>
-      <div className='temperatureBox'>
-        <Temperatures />
+      <div className='dataBox'>
+        <ArduinoDatas />
       </div>
     </div>
   )
