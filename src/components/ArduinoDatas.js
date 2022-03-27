@@ -24,7 +24,7 @@ const Arduino = () => {
     
     const deleteValue = (id) => {
         
-        axios.delete("http://localhost:5000/api/arduinoData/data/" + id)
+        axios.delete("http://localhost:5000/api/arduinoData/data/delete/" + id)
         .then(res => {
             console.log(res.data)
         })
